@@ -80,10 +80,10 @@ Dogestry push works by
 
 Dogestry pull works by
 * resolving the requested image name or id by querying the remote:
-  * it could be a mapping from a docker "repostitory:tag" pair to an id.
+  * it could be a mapping from a docker "repository:tag" pair to an id.
   * it could be the prefix of an image id which exists on the remote.
 * efficiently synchronise images from the remote.
-  * walk the ancetry of the requested image until we reach an image that the local docker already has.
+  * walk the ancestry of the requested image until we reach an image that the local docker already has.
   * download the required images.
 * preparing a tarball in the format needed by `docker load` and sending it to docker.
 
@@ -99,10 +99,10 @@ It currently does not do this. Luckily most of these blockers are concentrated i
 In capistrano (as we use it):
 * dependencies are not resolved until during deployment.
   * If the services hosting these dependencies are down, we're unable to deploy.
-  * If these services go down half way through a deploy onto multiple boxes: chaos.
+  * If these services go down half-way through a deploy onto multiple boxes: chaos.
   * This is particularly the case on fresh boxes, `bundle install` is a very expensive and coupled to external service uptime.
 * Capistrano as software is complex
-  * Maintinaing recipes is difficult
+  * Maintaining recipes is difficult
   * Debugging recipes is difficult
   * Testing ditto
 
@@ -126,7 +126,7 @@ the docker registry.
 
 Dogestry's design aims to support a wide range of dumb and smart transports.
 
-It centres around a common portable repository format.
+It centers around a common portable repository format.
 
 ### synchronisation
 
